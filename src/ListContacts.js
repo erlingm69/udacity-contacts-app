@@ -8,6 +8,8 @@ export default class ListContacts extends Component {
 
 
 
+
+
       </ol>
     )
   }
