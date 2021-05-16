@@ -19,7 +19,7 @@ class ListContacts extends Component {
 
   render() {
     const {query} = this.state;
-    const { contacts, onDeleteContact} = this.props;
+    const { contacts, onDeleteContact, onNavigate} = this.props;
     const showingContacts = query === "" ? contacts :
     contacts.filter((c) => (c.name.toLowerCase().includes(query.toLowerCase())));
 
@@ -28,6 +28,7 @@ class ListContacts extends Component {
         <div className="list-contacts-top">
           <input className="search-contacts" type="text"
           value={query} onChange={(e) => this.updateQuery(e.target.value)} />
+            <a className="add-contact" href="#create" onClick={() => onNavigate()} />
         </div>
         {
           showingContacts.length !== contacts.length && (
