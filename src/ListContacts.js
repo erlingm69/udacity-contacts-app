@@ -7,6 +7,7 @@ export default class ListContacts extends Component {
       <ol className="contact-list">
 
 
+
       </ol>
     )
   }
