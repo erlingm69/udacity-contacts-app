@@ -29,6 +29,14 @@ class ListContacts extends Component {
           <input className="search-contacts" type="text"
           value={query} onChange={(e) => this.updateQuery(e.target.value)} />
         </div>
+        {
+          showingContacts.length !== contacts.length && (
+            <div className="showing-contacts">
+              <span>Now showing {showingContacts.length} of {contacts.length} contacts</span>
+              <button onClick={() => this.updateQuery("")}>Show All</button>
+            </div>
+          )
+        }
         <ol className="contact-list">{
           showingContacts.map((contact) => (
             <li key={contact.id} className="contact-list-item">
